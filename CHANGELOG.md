@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3 2017-10-09
+
+* ADD: omit lines that begin with '#' that should be treated as comments
+
 ## 0.2 2017-10-01
 
 * ADD: handle server role name and server number

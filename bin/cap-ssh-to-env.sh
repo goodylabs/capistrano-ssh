@@ -38,7 +38,7 @@ echo "Remote ENV: ${REMOTE_ENV}"
 echo "Server role: ${SERVER_ROLE}"
 echo "Server number: ${SERVER_NO}"
 
-FIRST_SERVER_LINE=`${CAT} ${CAPISTRANO_CONFIG_DIR}/${REMOTE_ENV}.rb  | ${GREP} "server" | ${GREP} "${SERVER_ROLE}" | ${HEAD} -${SERVER_NO} | ${TAIL} -1`
+FIRST_SERVER_LINE=`${CAT} ${CAPISTRANO_CONFIG_DIR}/${REMOTE_ENV}.rb  | ${GREP} -v "^#" | ${GREP} "server" | ${GREP} "${SERVER_ROLE}" | ${HEAD} -${SERVER_NO} | ${TAIL} -1`
 
 REMOTE_HOST=`echo ${FIRST_SERVER_LINE} | ${CUT} -f 1 -d "," | ${CUT} -f 2 -d "'"`
 REMOTE_USER=`echo ${FIRST_SERVER_LINE} | ${CUT} -f 2 -d "," | ${CUT} -f 2 -d "'"`
