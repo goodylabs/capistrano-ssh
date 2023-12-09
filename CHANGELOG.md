@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4 2023-12-06 
+
+* FIX: parse single quotes and double quotes
+
 ## 0.3 2017-10-09
 
 * ADD: omit lines that begin with '#' that should be treated as comments
